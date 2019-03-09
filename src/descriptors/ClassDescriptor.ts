@@ -1,4 +1,4 @@
-import { HeritageClause, MethodSignature, Modifier, Node, PropertySignature, TypeElement, TypeParameterDeclaration } from 'typescript';
+import { HeritageClause, MethodSignature, Modifier, Node, PropertySignature, TypeElement, TypeParameterDeclaration, ClassDeclaration, ClassLikeDeclarationBase, ConstructorDeclaration } from 'typescript';
 export class ClassDescriptor {
   methods: MethodSignature[];
   properties: PropertySignature[];
@@ -6,8 +6,10 @@ export class ClassDescriptor {
   readonly className: string;
   typeParameters: TypeParameterDeclaration[];
   heritageClauses: HeritageClause[];
-  classDeclaration: string;
+  classDeclarationString: string;
   jsDoc: Node[];
+  classDeclaration: ClassLikeDeclarationBase;
+  ctors: ConstructorDeclaration[];
   get interfaceName(): string {
     return `I${this.className}`;
   }

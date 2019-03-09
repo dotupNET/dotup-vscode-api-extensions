@@ -1,21 +1,28 @@
 // tslint:disable-next-line: max-line-length
-import { ClassDeclaration, createMethodSignature, createModifier, createPropertySignature, createTypeParameterDeclaration, MethodDeclaration, MethodSignature, NodeArray, PropertyDeclaration, PropertySignature, SyntaxKind, TypeParameterDeclaration } from 'typescript';
+import { ClassDeclaration, createMethodSignature, createModifier, createPropertySignature, createTypeParameterDeclaration, MethodDeclaration, MethodSignature, NodeArray, PropertyDeclaration, PropertySignature, SyntaxKind, TypeParameterDeclaration, ConstructorDeclaration, ClassLikeDeclarationBase } from 'typescript';
 import { ClassDescriptor } from '../descriptors/ClassDescriptor';
 import { ExtendedNode } from '../interfaces/ExtendedNode';
+import { tools } from '../tools';
+import { NodeAnalyser } from './NodeAnalyser';
 
 export class ClassAnalyer {
 
-  getClassDescriptor(classDeclaration: ClassDeclaration): ClassDescriptor {
+  getClassDescriptor(classDeclaration: ClassLikeDeclarationBase): ClassDescriptor {
 
     const descriptor = new ClassDescriptor(classDeclaration.name.text);
-    descriptor.classDeclaration = classDeclaration
+    descriptor.classDeclaration = classDeclaration;
+
+    // const ctorArgs = this.createTypeParameter(ctor[0]));
+
+    descriptor.classDeclarationString = classDeclaration
       .getText()
       .split('\n')[0];
     descriptor.modifiers = [createModifier(SyntaxKind.ExportKeyword)];
 
+    descriptor.ctors = this.getConstructors(classDeclaration);
     descriptor.methods = this.getMethods(classDeclaration);
     descriptor.properties = this.getProperties(classDeclaration);
-    descriptor.typeParameters = this.createTypeParameter(classDeclaration.typeParameters);
+    descriptor.typeParameters = NodeAnalyser.getTypeParameterDeclaration(classDeclaration.typeParameters);
     // tslint:disable-next-line: no-any : no-unsafe-any
     descriptor.jsDoc = (<any>classDeclaration).jsDoc;
 
@@ -23,7 +30,7 @@ export class ClassAnalyer {
 
   }
 
-  getMethods(classDeclaration: ClassDeclaration): MethodSignature[] {
+  getMethods(classDeclaration: ClassLikeDeclarationBase): MethodSignature[] {
 
     const classMethodsNodes = classDeclaration.members.filter(m => m.kind === SyntaxKind.MethodDeclaration);
     const classMethods = <MethodDeclaration[]>classMethodsNodes;
@@ -41,7 +48,7 @@ export class ClassAnalyer {
     // create method signatures
     return publicMethods.map(method => {
       const m = createMethodSignature(
-        this.createTypeParameter(method.typeParameters),
+        NodeAnalyser.getTypeParameterDeclaration(method.typeParameters),
         method.parameters,
         method.type,
         method.name,
@@ -54,7 +61,7 @@ export class ClassAnalyer {
     });
   }
 
-  getProperties(classDeclaration: ClassDeclaration): PropertySignature[] {
+  getProperties(classDeclaration: ClassLikeDeclarationBase): PropertySignature[] {
 
     const classPropertyNodes = classDeclaration.members.filter(m => m.kind === SyntaxKind.PropertyDeclaration);
     const classProperties = <PropertyDeclaration[]>classPropertyNodes;
@@ -87,6 +94,24 @@ export class ClassAnalyer {
 
   }
 
+  getConstructors(classDeclaration: ClassLikeDeclarationBase): ConstructorDeclaration[] {
+
+    const ctors = classDeclaration.members.filter(m => m.kind === SyntaxKind.Constructor);
+    const classMethods = <ConstructorDeclaration[]>ctors;
+
+    // Filter to public methods
+    const publicCtors = classMethods
+      .filter(method => {
+        if (method.modifiers === undefined) {
+          return true;
+        }
+
+        return method.modifiers.some(item => item.kind === SyntaxKind.PublicKeyword);
+      });
+
+    return publicCtors;
+  }
+
   // tslint:disable
   assignComments<TSource, TTarget>(source: ExtendedNode, target: ExtendedNode): void {
     if (source.jsDoc !== undefined) {
@@ -95,17 +120,5 @@ export class ClassAnalyer {
     }
   }
   // tslint:enable
-
-  createTypeParameter(typeParameters: NodeArray<TypeParameterDeclaration>): TypeParameterDeclaration[] {
-    if (typeParameters === undefined) {
-      return undefined;
-    } else {
-      return typeParameters.map(m =>
-        createTypeParameterDeclaration(
-          m.name, m.constraint, m.default
-        )
-      );
-    }
-  }
 
 }

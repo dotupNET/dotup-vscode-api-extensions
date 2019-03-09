@@ -63,6 +63,7 @@
   },
   "dependencies": {
     "inversify": "^5.0.1",
-    "reflect-metadata": "^0.1.13"
+    "reflect-metadata": "^0.1.13",
+    "dotup-ts-types": "^0.0.19"
   }
 }

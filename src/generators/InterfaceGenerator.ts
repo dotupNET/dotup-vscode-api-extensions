@@ -67,7 +67,7 @@ export class InterfaceGenerator implements INodeBuilder {
   }
 
   getInterfaceDeclarationString(item: ClassDescriptor): string {
-    let result = item.classDeclaration.replace('class', 'interface');
+    let result = item.classDeclarationString.replace('class', 'interface');
     result = result.replace(item.className, item.interfaceName);
     // export class ExtendsOnly<XY, TG extends string> extends ABC {
     // =>

@@ -13,7 +13,7 @@ import { SourceAnalyser } from './SourceAnalyser';
 export class FileAnalyser {
 
   analyseFile(sourceFilePath: string, out: OutputChannel): SourceFileDescriptor {
-    out.appendLine(`Analysing file ${sourceFilePath}`);
+    // out.appendLine(`Analysing file ${sourceFilePath}`);
     const analyser = new SourceAnalyser();
     // tslint:disable-next-line: non-literal-fs-path
     const sourceFileContent = fs.readFileSync(sourceFilePath, 'utf-8');

@@ -1,5 +1,5 @@
 // tslint:disable-next-line: max-line-length
-import { createPrinter, createSourceFile, EmitHint, NewLineKind, ScriptKind, ScriptTarget, SourceFile } from 'typescript';
+import { createPrinter, createSourceFile, EmitHint, NewLineKind, Node, ScriptKind, ScriptTarget, SourceFile } from 'typescript';
 import { TargetFileDescriptor } from '../descriptors/TargetFileDescriptor';
 // import { InterfaceGenerator } from './InterfaceGenerator';
 
@@ -7,11 +7,13 @@ import { TargetFileDescriptor } from '../descriptors/TargetFileDescriptor';
 
 export class SourceFileGenerator {
 
-  createFile(fileDescriptor: TargetFileDescriptor): SourceFile {
+  createFile(targetDescriptor: TargetFileDescriptor): SourceFile {
     const result: string[] = [];
+    const fileName = targetDescriptor.targetFilePath;
+    const nodes = targetDescriptor.nodes;
 
     const resultFile = createSourceFile(
-      fileDescriptor.targetFilePath,
+      fileName,
       '',
       ScriptTarget.Latest,
       false,
@@ -36,10 +38,10 @@ export class SourceFileGenerator {
     //   resultFile
     // );
 
-    if (fileDescriptor.nodes.length > 0) {
+    if (nodes.length > 0) {
       // this.out.appendLine(`Printing nodes`);
 
-      fileDescriptor.nodes.forEach(item => {
+      nodes.forEach(item => {
         const x = printer.printNode(EmitHint.Unspecified, item, resultFile);
         result.push(x);
         console.log(x);

@@ -1,13 +1,13 @@
 // tslint:disable: newline-per-chained-call
 // tslint:disable-next-line: no-implicit-dependencies
 import { expect } from 'chai';
-import { AwesomeLibrary } from '../src/AwesomeLibrary';
+import { SourceFileWriter } from '../src/SourceFileWriter';
 
 describe('AwesomeLibrary', () => {
 
   it('should create an instance', () => {
-    const value = new AwesomeLibrary();
-    expect(value).instanceOf(AwesomeLibrary);
+    const value = new SourceFileWriter();
+    expect(value).instanceOf(SourceFileWriter);
   });
 
 });
