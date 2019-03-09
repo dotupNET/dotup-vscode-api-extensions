@@ -8,15 +8,16 @@
     "vscode": "^1.16.0"
   },
   "scripts": {
-    "build": "tsc",
-    "release": "npm run clean-build && npm run test && git push && npm run gh-pages && npm publish",
+    "release": "npm run clean-build && npm run test-mocha && git push && npm run gh-pages && npm publish",
     "clean-dist": "rimraf dist",
     "clean-build": "rimraf dist && tsc",
-    "test": "jasmine-ts",
-    "docs": "typedoc --mode file --out docs src --exclude \"**/*+(index|.spec|.e2e).ts\"",
+    "test-mocha": "node node_modules/mocha/bin/mocha --require ts-node/register test/*.test.ts --reporter spec",
+    "test-jasmine": "jasmine-ts",
+    "docs": "typedoc --mode file --out docs src --exclude \"**/*+(index|.spec|.test|.e2e).ts\"",
     "gh-pages": "rimraf docs && npm run docs && gh-pages -d docs",
     "postversion": "git push && git push --tags",
-    "npm-publish": "npm publish"
+    "npm-publish": "npm publish",
+    "postinstall": "node ./node_modules/vscode/bin/install"
   },
   "repository": {
     "type": "git",
@@ -37,9 +38,10 @@
     "typescript": "^3.3.3"
   },
   "devDependencies": {
-    "@types/expect": "^1.20.4",
+    "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.6",
-    "expect": "^24.1.0",
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
     "gh-pages": "^2.0.1",
     "grunt": "^1.0.3",
     "grunt-concurrent": "^2.3.1",
@@ -53,10 +55,14 @@
     "grunt-tslint": "^5.0.2",
     "rimraf": "^2.6.3",
     "ts-node": "^8.0.2",
-    "tslint": "^5.12.1",
-    "tslint-microsoft-contrib": "^6.0.0",
+    "tslint": "^5.13.1",
+    "tslint-microsoft-contrib": "^6.1.0",
     "typedoc": "^0.14.2",
     "typescript": "^3.3.3",
     "vscode": "^1.1.30"
+  },
+  "dependencies": {
+    "inversify": "^5.0.1",
+    "reflect-metadata": "^0.1.13"
   }
 }

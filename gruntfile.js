@@ -53,6 +53,7 @@ module.exports = function (grunt) {
       all: {
         src: [
           "**/*.ts",
+          "!src/dotup-sample-skill",
           "!dist/**/*.ts",
           "!node_modules/**/*.ts",
           "!obj/**/*.ts",
@@ -82,11 +83,18 @@ module.exports = function (grunt) {
     },
 
     run: {
-      test: {
+      'test-jasmine': {
         cmd: 'npm.cmd',
         args: [
           'run',
-          'test'
+          'test-jasmine'
+        ]
+      },
+      'test-mocha': {
+        cmd: 'npm.cmd',
+        args: [
+          'run',
+          'test-mocha'
         ]
       },
       publish: {
@@ -119,9 +127,13 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-concurrent");
   grunt.loadNpmTasks('grunt-run');
 
+  grunt.registerTask("test-mocha", ["run:test-mocha"]);
+
   // Default tasks.
   grunt.registerTask("serve", ["concurrent:watchers"]);
   grunt.registerTask("build", ["clean", "ts", "copy:assets"]);
-  grunt.registerTask("release", ["clean", "ts", "run:test", "tslint:all", "copy:assets"]);
-  grunt.registerTask("publish", ["release", "run:ghpages", "run:publish"]);
+  //grunt.registerTask("release", ["clean", "ts", "tslint:all", "copy:assets"]);
+  grunt.registerTask("pre-publish", ["clean", "ts", "run:test-mocha", "tslint:all", "copy:assets"]);
+  grunt.registerTask("publish", ["pre-publish", "run:ghpages", "run:publish"]);
+
 };

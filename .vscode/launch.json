@@ -5,13 +5,6 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "chrome",
-      "request": "launch",
-      "name": "Launch Chrome against localhost",
-      "url": "http://localhost:8080",
-      "webRoot": "${workspaceFolder}"
-    },
-    {
       "type": "node",
       "request": "launch",
       "envFile": "${workspaceFolder}/.env",
@@ -20,17 +13,6 @@
       "outFiles": [
         "${workspaceFolder}/dist/*.js"
       ]
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Current Jasmine File",
-      "program": "${workspaceFolder}/node_modules/jasmine-ts/lib/index",
-      "args": [
-        "${file}"
-      ],
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen"
     },
     {
       "name": "Current TS File",
@@ -66,6 +48,32 @@
       },
       "console": "internalConsole",
       "sourceMaps": false
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Current Jasmine File",
+      "program": "${workspaceFolder}/node_modules/jasmine-ts/lib/index",
+      "args": [
+        "${file}"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Current Mocha File",
+      "type": "node",
+      "protocol": "inspector",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+      "stopOnEntry": false,
+      "args": [
+        "--require",
+        "ts-node/register",
+        "--no-timeouts",
+        "${relativeFile}"
+      ],
+      "cwd": "${workspaceRoot}"
     }
   ]
 }
