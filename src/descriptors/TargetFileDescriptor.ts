@@ -9,6 +9,7 @@ export class TargetFileDescriptor {
   constructor(targetFilePath: string) {
     // source
     this.targetFilePath = targetFilePath;
+    this.nodes = [];
   }
 
   addNode(node: ExtendedNode | ExtendedNode[]) {
