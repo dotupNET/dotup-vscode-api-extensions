@@ -135,5 +135,6 @@ module.exports = function (grunt) {
   //grunt.registerTask("release", ["clean", "ts", "tslint:all", "copy:assets"]);
   grunt.registerTask("pre-publish", ["clean", "ts", "run:test-mocha", "tslint:all", "copy:assets"]);
   grunt.registerTask("publish", ["pre-publish", "run:ghpages", "run:publish"]);
+  grunt.registerTask("publish-fast", ["pre-publish", "run:publish"]);
 
 };
