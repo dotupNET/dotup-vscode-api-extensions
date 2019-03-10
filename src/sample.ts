@@ -15,9 +15,9 @@ export class Sample {
   run(file?: string): void {
     const builder = new NodeBuilder();
     const sourceFile = this.getDescriptor('sample.ts');
-    const methods = sourceFile.classDescriptors
-      .map(c => c.methods)
-      .reduce((p, c) => p.concat(c));
+    // const methods = sourceFile.classDescriptors
+    //   .map(c => c.methods)
+    //   .reduce((p, c) => p.concat(c));
 
     // const nodes: Node[] = [];
     // methods.forEach(m => {
@@ -38,8 +38,8 @@ export class Sample {
     // target.nodes = nodes;
     // fileWriter.write(target);
 
-    // const result = builder.printNode(nodes);
-    // console.log(result);
+    const result = builder.printNode(nodes);
+    console.log(result);
   }
 
   getDescriptor(file: string): SourceFileDescriptor {

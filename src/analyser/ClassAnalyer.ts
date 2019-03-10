@@ -1,8 +1,7 @@
 // tslint:disable-next-line: max-line-length
-import { ClassDeclaration, createMethodSignature, createModifier, createPropertySignature, createTypeParameterDeclaration, MethodDeclaration, MethodSignature, NodeArray, PropertyDeclaration, PropertySignature, SyntaxKind, TypeParameterDeclaration, ConstructorDeclaration, ClassLikeDeclarationBase } from 'typescript';
+import { ClassLikeDeclarationBase, ConstructorDeclaration, createMethodSignature, createModifier, createPropertySignature, MethodDeclaration, MethodSignature, Node, PropertyDeclaration, PropertySignature, SyntaxKind, Modifier, NodeArray } from 'typescript';
 import { ClassDescriptor } from '../descriptors/ClassDescriptor';
 import { ExtendedNode } from '../interfaces/ExtendedNode';
-import { tools } from '../tools';
 import { NodeAnalyser } from './NodeAnalyser';
 
 export class ClassAnalyer {
@@ -80,7 +79,7 @@ export class ClassAnalyer {
     return publicProperties.map(property => {
 
       const p = createPropertySignature(
-        property.modifiers.filter(x => x.kind !== SyntaxKind.PublicKeyword),
+        this.filterModifier(property.modifiers, SyntaxKind.PublicKeyword),
         property.name,
         property.questionToken,
         property.type,
@@ -92,6 +91,14 @@ export class ClassAnalyer {
       return p;
     });
 
+  }
+
+  filterModifier(modifiers: NodeArray<Modifier>, excluded: SyntaxKind): Modifier[] {
+    if (modifiers === undefined) {
+      return undefined;
+    }
+
+    return modifiers.filter(x => x.kind !== excluded);
   }
 
   getConstructors(classDeclaration: ClassLikeDeclarationBase): ConstructorDeclaration[] {

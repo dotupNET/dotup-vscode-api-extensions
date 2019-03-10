@@ -23,12 +23,12 @@ export class TestGenerator {
 
     let ctorArgs = '';
 
-    const ctor = classDescriptor.ctors.reduce((p, c) => {
-      return p.parameters.length > c.parameters.length ? p : c;
-    });
-
-    if (ctor.parameters.length > 0) {
+    if (classDescriptor.ctors.length > 0) {
       // Generate constructor arguments
+      const ctor = classDescriptor.ctors.reduce((p, c) => {
+        return p.parameters.length > c.parameters.length ? p : c;
+      });
+
       const params = NodeAnalyser.getParameterDescriptor(ctor.parameters, (name) => this.getName(name));
       const variables = this.generateVariableDeclarations(params); //.map(p => createIdentifier(`const ${p.name} = ${p.value};`));
       builder.add(variables);
