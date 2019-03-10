@@ -1,4 +1,4 @@
-import { NodeArray, TypeParameterDeclaration, createTypeParameterDeclaration, ParameterDeclaration } from 'typescript';
+import { createTypeParameterDeclaration, NodeArray, ParameterDeclaration, TypeParameterDeclaration } from 'typescript';
 import { IParameterDescriptor } from '../descriptors/IParameterDescriptor';
 import { NodeBuilder } from '../generators/NodeBuilder';
 export namespace NodeAnalyser {
@@ -15,9 +15,11 @@ export namespace NodeAnalyser {
     }
   }
 
+  // tslint:disable-next-line: max-line-length
   export function getParameterDescriptor(parameters: NodeArray<ParameterDeclaration>, nameProvider: (name: string) => string): IParameterDescriptor[] {
     const builder = new NodeBuilder();
-    const params = parameters.map(p => {
+
+    return parameters.map(p => {
       return {
         name: nameProvider(builder.printNode(p.name)),
         // parameterDeclaration: p,
@@ -25,7 +27,6 @@ export namespace NodeAnalyser {
         value: builder.valueProvider.getValue(p.type.getText())
       };
     });
-    return params;
   }
 
 }

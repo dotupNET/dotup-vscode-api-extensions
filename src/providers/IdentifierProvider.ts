@@ -1,14 +1,13 @@
-import { getConstantValue } from 'typescript';
 import { KeyValuePair } from 'dotup-ts-types';
 export class IdentifierProvider {
 
-  private names: KeyValuePair<string, number>[];
+  private readonly names: KeyValuePair<string, number>[];
 
   constructor() {
     this.names = [];
   }
 
-  getName(name: string): any {
+  getName(name: string): string {
 
     let entry = this.names.find(item => item.key === name);
     if (entry === undefined) {
@@ -16,6 +15,7 @@ export class IdentifierProvider {
       this.names.push(entry);
     }
     entry.value += 1;
+
     return `${name}${entry.value}`;
   }
 

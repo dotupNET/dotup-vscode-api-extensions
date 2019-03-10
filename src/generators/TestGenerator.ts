@@ -1,10 +1,10 @@
-import { MethodSignature, Node, createPrinter, EmitHint, createSourceFile, ScriptTarget, ScriptKind, NewLineKind, createToken, SyntaxKind, createIdentifier, createCall, createParameter, createExpressionStatement, createExpressionWithTypeArguments, createNodeArray, Identifier } from 'typescript';
-import { NodeBuilder } from './NodeBuilder';
-import { ClassDescriptor } from '../descriptors';
-import { tools } from '../tools';
-import { IdentifierProvider } from '../providers/IdentifierProvider';
+import { createIdentifier, Identifier, MethodSignature, Node } from 'typescript';
 import { NodeAnalyser } from '../analyser/NodeAnalyser';
+import { ClassDescriptor } from '../descriptors';
 import { IParameterDescriptor } from '../descriptors/IParameterDescriptor';
+import { IdentifierProvider } from '../providers/IdentifierProvider';
+import { tools } from '../tools';
+import { NodeBuilder } from './NodeBuilder';
 
 export class TestGenerator {
   readonly identifierProvider: IdentifierProvider;
@@ -30,10 +30,12 @@ export class TestGenerator {
       });
 
       const params = NodeAnalyser.getParameterDescriptor(ctor.parameters, (name) => this.getName(name));
-      const variables = this.generateVariableDeclarations(params); //.map(p => createIdentifier(`const ${p.name} = ${p.value};`));
+      const variables = this.generateVariableDeclarations(params); // .map(p => createIdentifier(`const ${p.name} = ${p.value};`));
       builder.add(variables);
 
-      ctorArgs = params.map(p => p.name).join(', ');
+      ctorArgs = params
+        .map(p => p.name)
+        .join(', ');
     }
 
     const classInstanceName = this.getName(tools.camelCase(classDescriptor.className));
@@ -78,7 +80,7 @@ export class TestGenerator {
 
     if (params.length > 0) {
       // Create variable for each argument
-      const variables = this.generateVariableDeclarations(params); //.map(p => createIdentifier(`const ${p.name} = ${p.value};`));
+      const variables = this.generateVariableDeclarations(params); // .map(p => createIdentifier(`const ${p.name} = ${p.value};`));
       builder.add(variables);
       // Create argument names
       argumentNames = params.map(p => p.name);

@@ -1,4 +1,6 @@
-import { HeritageClause, MethodSignature, Modifier, Node, PropertySignature, TypeElement, TypeParameterDeclaration, ClassDeclaration, ClassLikeDeclarationBase, ConstructorDeclaration } from 'typescript';
+// tslint:disable-next-line: max-line-length
+import { ClassLikeDeclarationBase, ConstructorDeclaration, HeritageClause, MethodSignature, Modifier, Node, PropertySignature, TypeElement, TypeParameterDeclaration } from 'typescript';
+
 export class ClassDescriptor {
   methods: MethodSignature[];
   properties: PropertySignature[];

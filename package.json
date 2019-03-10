@@ -8,6 +8,7 @@
     "vscode": "^1.16.0"
   },
   "scripts": {
+    "build": "tsc",
     "release": "npm run clean-build && npm run test-mocha && git push && npm run gh-pages && npm publish",
     "clean-dist": "rimraf dist",
     "clean-build": "rimraf dist && tsc",
@@ -41,7 +42,6 @@
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.6",
     "chai": "^4.2.0",
-    "mocha": "^6.0.2",
     "gh-pages": "^2.0.1",
     "grunt": "^1.0.3",
     "grunt-concurrent": "^2.3.1",
@@ -53,6 +53,7 @@
     "grunt-run": "^0.8.1",
     "grunt-ts": "^6.0.0-beta.22",
     "grunt-tslint": "^5.0.2",
+    "mocha": "^6.0.2",
     "rimraf": "^2.6.3",
     "ts-node": "^8.0.2",
     "tslint": "^5.13.1",
@@ -62,8 +63,6 @@
     "vscode": "^1.1.30"
   },
   "dependencies": {
-    "inversify": "^5.0.1",
-    "reflect-metadata": "^0.1.13",
     "dotup-ts-types": "^0.0.19"
   }
 }

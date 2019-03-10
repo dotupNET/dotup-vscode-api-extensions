@@ -7,7 +7,6 @@
   ],
   "rules": {
     "strict-boolean-expressions": false,
-    ,
     "no-unnecessary-callback-wrapper": false,
     "no-void-expression": false,
     "completed-docs": false,
