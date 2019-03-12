@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>VsCodeExtensions | dotup-vscode-api-extensions</title>
+	<title>GeneratorContext | dotup-vscode-api-extensions</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="vscodeextensions.html">VsCodeExtensions</a>
+					<a href="generatorcontext.html">GeneratorContext</a>
 				</li>
 			</ul>
-			<h1>Class VsCodeExtensions</h1>
+			<h1>Class GeneratorContext</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">VsCodeExtensions</span>
+						<span class="target">GeneratorContext</span>
 					</li>
 				</ul>
 			</section>
@@ -81,21 +81,14 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="vscodeextensions.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-private-protected">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="vscodeextensions.html#context" class="tsd-kind-icon">context</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="vscodeextensions.html#handler" class="tsd-kind-icon">handler</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="generatorcontext.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Methods</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="vscodeextensions.html#addcommand" class="tsd-kind-icon">add<wbr>Command</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="vscodeextensions.html#registercommands" class="tsd-kind-icon">register<wbr>Commands</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="generatorcontext.html#sourcedescriptor" class="tsd-kind-icon">source<wbr>Descriptor</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="generatorcontext.html#targetdescriptor" class="tsd-kind-icon">target<wbr>Descriptor</a></li>
 							</ul>
 						</section>
 					</div>
@@ -107,105 +100,50 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>VsCode<wbr>Extensions<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ExtensionContext</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="vscodeextensions.html" class="tsd-signature-type">VsCodeExtensions</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Generator<wbr>Context<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="sourcefiledescriptor.html" class="tsd-signature-type">SourceFileDescriptor</a>, target<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="targetfiledescriptor.html" class="tsd-signature-type">TargetFileDescriptor</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="generatorcontext.html" class="tsd-signature-type">GeneratorContext</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/b7225bc/src/VsCodeExtensions.ts#L8">VsCodeExtensions.ts:8</a></li>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/b7225bc/src/generators/GeneratorContext.ts#L11">generators/GeneratorContext.ts:11</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>context: <span class="tsd-signature-type">ExtensionContext</span></h5>
+									<h5>source: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="sourcefiledescriptor.html" class="tsd-signature-type">SourceFileDescriptor</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> target: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="targetfiledescriptor.html" class="tsd-signature-type">TargetFileDescriptor</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="vscodeextensions.html" class="tsd-signature-type">VsCodeExtensions</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="generatorcontext.html" class="tsd-signature-type">GeneratorContext</a></h4>
 						</li>
 					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private-protected">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-					<a name="context" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> context</h3>
-					<div class="tsd-signature tsd-kind-icon">context<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ExtensionContext</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/b7225bc/src/VsCodeExtensions.ts#L7">VsCodeExtensions.ts:7</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-					<a name="handler" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> handler</h3>
-					<div class="tsd-signature tsd-kind-icon">handler<span class="tsd-signature-symbol">:</span> <a href="../globals.html#icommandhandler" class="tsd-signature-type">ICommandHandler</a><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/b7225bc/src/VsCodeExtensions.ts#L8">VsCodeExtensions.ts:8</a></li>
-						</ul>
-					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="addcommand" class="tsd-anchor"></a>
-					<h3>add<wbr>Command</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Command<span class="tsd-signature-symbol">(</span>handler<span class="tsd-signature-symbol">: </span><a href="../interfaces/iregistercommandhandler.html" class="tsd-signature-type">IRegisterCommandHandler</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Command<span class="tsd-signature-symbol">(</span>handler<span class="tsd-signature-symbol">: </span><a href="../interfaces/iregistertexteditorcommandhandler.html" class="tsd-signature-type">IRegisterTextEditorCommandHandler</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/b7225bc/src/VsCodeExtensions.ts#L14">VsCodeExtensions.ts:14</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>handler: <a href="../interfaces/iregistercommandhandler.html" class="tsd-signature-type">IRegisterCommandHandler</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/b7225bc/src/VsCodeExtensions.ts#L16">VsCodeExtensions.ts:16</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>handler: <a href="../interfaces/iregistertexteditorcommandhandler.html" class="tsd-signature-type">IRegisterTextEditorCommandHandler</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="sourcedescriptor" class="tsd-anchor"></a>
+					<h3>source<wbr>Descriptor</h3>
+					<div class="tsd-signature tsd-kind-icon">source<wbr>Descriptor<span class="tsd-signature-symbol">:</span> <a href="sourcefiledescriptor.html" class="tsd-signature-type">SourceFileDescriptor</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/b7225bc/src/generators/GeneratorContext.ts#L10">generators/GeneratorContext.ts:10</a></li>
+						</ul>
+					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="registercommands" class="tsd-anchor"></a>
-					<h3>register<wbr>Commands</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">register<wbr>Commands<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/b7225bc/src/VsCodeExtensions.ts#L21">VsCodeExtensions.ts:21</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="targetdescriptor" class="tsd-anchor"></a>
+					<h3>target<wbr>Descriptor</h3>
+					<div class="tsd-signature tsd-kind-icon">target<wbr>Descriptor<span class="tsd-signature-symbol">:</span> <a href="targetfiledescriptor.html" class="tsd-signature-type">TargetFileDescriptor</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/b7225bc/src/generators/GeneratorContext.ts#L11">generators/GeneratorContext.ts:11</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -222,22 +160,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="vscodeextensions.html" class="tsd-kind-icon">Vs<wbr>Code<wbr>Extensions</a>
+						<a href="generatorcontext.html" class="tsd-kind-icon">Generator<wbr>Context</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="vscodeextensions.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="generatorcontext.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-								<a href="vscodeextensions.html#context" class="tsd-kind-icon">context</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="generatorcontext.html#sourcedescriptor" class="tsd-kind-icon">source<wbr>Descriptor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-								<a href="vscodeextensions.html#handler" class="tsd-kind-icon">handler</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="vscodeextensions.html#addcommand" class="tsd-kind-icon">add<wbr>Command</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="vscodeextensions.html#registercommands" class="tsd-kind-icon">register<wbr>Commands</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="generatorcontext.html#targetdescriptor" class="tsd-kind-icon">target<wbr>Descriptor</a>
 							</li>
 						</ul>
 					</li>
