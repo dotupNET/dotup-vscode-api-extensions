@@ -1,6 +1,6 @@
 {
   "name": "dotup-vscode-api-extensions",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "template for typescript libraries",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
