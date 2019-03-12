@@ -1,6 +1,6 @@
 {
   "name": "dotup-vscode-api-extensions",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "template for typescript libraries",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "release": "npm run clean-build && npm run test-mocha && git push && npm run gh-pages && npm publish",
+    "release": "npm run clean-build && npm run test-mocha && npm run gh-pages && npm publish",
     "clean-dist": "rimraf dist",
     "clean-build": "rimraf dist && tsc",
     "test-mocha": "node node_modules/mocha/bin/mocha --require ts-node/register test/*.test.ts --reporter spec",
@@ -18,9 +18,7 @@
     "gh-pages": "rimraf docs && npm run docs && gh-pages -d docs",
     "postversion": "git push && git push --tags",
     "git-tag": "git tag echo %npm_package_version%",
-    "postpublish": "",
-    "cho": "git commit -a -m \"Release v%npm_package_version%\" && git push && git tag -a v%npm_package_version% -m \"Release v%npm_package_version%\" && git push origin --tags",
-    "cso": "git tag -a v%npm_package_version% -m \"Release v%npm_package_version%\"; git push origin --tags",
+    "postpublish": "git commit -a -m \"Release v%npm_package_version%\" && git push && git tag -a v%npm_package_version% -m \"Release v%npm_package_version%\" && git push origin --tags",
     "npm-publish": "npm publish"
   },
   "repository": {
