@@ -104,10 +104,11 @@ export class ClassAnalyer {
   getConstructors(classDeclaration: ClassLikeDeclarationBase): ConstructorDeclaration[] {
 
     const ctors = classDeclaration.members.filter(m => m.kind === SyntaxKind.Constructor);
-    const classMethods = <ConstructorDeclaration[]>ctors;
+    const constructors = <ConstructorDeclaration[]>ctors;
 
-    // Filter to public methods
-    const publicCtors = classMethods
+    // Filter to public constructors
+    // tslint:disable-next-line: no-unnecessary-local-variable
+    const publicCtors = constructors
       .filter(method => {
         if (method.modifiers === undefined) {
           return true;

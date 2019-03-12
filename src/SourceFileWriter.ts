@@ -17,4 +17,14 @@ export class SourceFileWriter {
     fs.writeFileSync(targetDescriptor.targetFilePath, targetSourceFile.text);
   }
 
+  writeString(targetDescriptor: TargetFileDescriptor, fileContent: string): void {
+    if (!fs.existsSync(targetDescriptor.targetFilePath)) {
+      // Create new interface file
+      fs.closeSync(fs.openSync(targetDescriptor.targetFilePath, 'w'));
+    }
+
+    // Create  file
+    fs.writeFileSync(targetDescriptor.targetFilePath, fileContent);
+  }
+
 }

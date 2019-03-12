@@ -24,14 +24,7 @@
     },
     {
       "type": "grunt",
-      "task": "build",
-      "problemMatcher": [
-        "$tsc"
-      ]
-    },
-    {
-      "type": "grunt",
-      "task": "serve",
+      "task": "ts:build",
       "problemMatcher": [
         "$tsc"
       ]
@@ -50,7 +43,7 @@
     },
     {
       "type": "grunt",
-      "task": "tslint",
+      "task": "ts:lint",
       "problemMatcher": [
         "$tslint5"
       ]

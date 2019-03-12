@@ -3,49 +3,6 @@ module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    nodemon: {
-      dev: {
-        script: './dist/sample.js'
-      },
-      options: {
-        ignore: [
-          'node_modules/**',
-          'dist/**',
-          'gruntfile.js'
-        ],
-        env: {
-          PORT: '8181'
-        }
-      }
-    },
-
-    watch: {
-      scripts: {
-        files: [
-          '**/*.ts',
-          '!node_modules/**/*.ts',
-          '!dist/**/*.ts'
-        ], // the watched files
-        copy: {
-          files: ['src/assets/**'],
-          tasks: ['copy']
-        },
-        tasks: ["newer:tslint:all", "ts:build"], // the task to run
-        options: {
-          spawn: false // makes the watch task faster
-        }
-      }
-    },
-
-    concurrent: {
-      watchers: {
-        tasks: ['nodemon', 'watch'],
-        options: {
-          logConcurrentOutput: true
-        }
-      }
-    },
-
     tslint: {
       options: {
         configuration: grunt.file.readJSON("tslint.json")
@@ -121,17 +78,14 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-ts");
   grunt.loadNpmTasks("grunt-tslint");
   grunt.loadNpmTasks("grunt-contrib-clean");
-  grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks("grunt-nodemon");
-  grunt.loadNpmTasks("grunt-concurrent");
   grunt.loadNpmTasks('grunt-run');
 
   grunt.registerTask("test-mocha", ["run:test-mocha"]);
 
   // Default tasks.
-  grunt.registerTask("serve", ["concurrent:watchers"]);
-  grunt.registerTask("build", ["clean", "ts", "copy:assets"]);
+  grunt.registerTask("ts:lint", "tslint:all");
+  grunt.registerTask("ts:build", ["clean", "ts", "copy:assets"]);
   //grunt.registerTask("release", ["clean", "ts", "tslint:all", "copy:assets"]);
   grunt.registerTask("pre-publish", ["clean", "ts", "run:test-mocha", "tslint:all", "copy:assets"]);
   grunt.registerTask("publish", ["pre-publish", "run:ghpages", "run:publish"]);

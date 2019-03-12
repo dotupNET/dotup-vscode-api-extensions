@@ -1,6 +1,9 @@
+// tslint:disable-next-line: no-implicit-dependencies
 import { createTypeParameterDeclaration, NodeArray, ParameterDeclaration, TypeParameterDeclaration } from 'typescript';
 import { IParameterDescriptor } from '../descriptors/IParameterDescriptor';
 import { NodeBuilder } from '../generators/NodeBuilder';
+import { NodePrinter } from '../generators/NodePrinter';
+
 export namespace NodeAnalyser {
 
   export function getTypeParameterDeclaration(typeParameters: NodeArray<TypeParameterDeclaration>): TypeParameterDeclaration[] {
@@ -21,7 +24,7 @@ export namespace NodeAnalyser {
 
     return parameters.map(p => {
       return {
-        name: nameProvider(builder.printNode(p.name)),
+        name: nameProvider(NodePrinter.printNode(p.name)),
         // parameterDeclaration: p,
         typeName: p.type.getText(),
         value: builder.valueProvider.getValue(p.type.getText())

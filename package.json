@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "engines": {
-    "vscode": "^1.16.0"
+    "vscode": "^1.32.0"
   },
   "scripts": {
     "build": "tsc",
@@ -17,7 +17,8 @@
     "docs": "typedoc --mode file --out docs src --exclude \"**/*+(index|.spec|.test|.e2e).ts\"",
     "gh-pages": "rimraf docs && npm run docs && gh-pages -d docs",
     "postversion": "git push && git push --tags",
-    "npm-publish": "npm publish"
+    "npm-publish": "npm publish",
+    "postinstall": "node ./node_modules/vscode/bin/install"
   },
   "repository": {
     "type": "git",
@@ -34,9 +35,6 @@
     "url": "https://github.com/dotupNET/dotup-vscode-api-extensions/issues"
   },
   "homepage": "https://github.com/dotupNET/dotup-vscode-api-extensions#readme",
-  "peerDependencies": {
-    "typescript": "^3.3.3"
-  },
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.6",
@@ -58,8 +56,8 @@
     "tslint": "^5.13.1",
     "tslint-microsoft-contrib": "^6.1.0",
     "typedoc": "^0.14.2",
-    "typescript": "^3.3.3",
-    "vscode": "^1.1.30"
+    "typescript": "^3.3.1",
+    "vscode": "^1.1.28"
   },
   "dependencies": {
     "dotup-ts-types": "^0.0.19"

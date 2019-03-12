@@ -1,6 +1,9 @@
+export * from './GeneratorContext';
+export * from './GeneratorResult';
 export * from './InterfaceGenerator';
 export * from './NodeBuilder';
-// export * from './NodeGenerator';
+export * from './NodeGenerator';
+export * from './NodePrinter';
 export * from './SourceFileGenerator';
 export * from './SourceToTargetFileConverter';
 export * from './TestGenerator';
