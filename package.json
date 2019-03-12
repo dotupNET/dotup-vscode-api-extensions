@@ -1,6 +1,6 @@
 {
   "name": "dotup-vscode-api-extensions",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "template for typescript libraries",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -17,8 +17,10 @@
     "docs": "typedoc --mode file --out docs src --exclude \"**/*+(index|.spec|.test|.e2e).ts\"",
     "gh-pages": "rimraf docs && npm run docs && gh-pages -d docs",
     "postversion": "git push && git push --tags",
-    "npm-publish": "npm publish",
-    "postinstall": "node ./node_modules/vscode/bin/install"
+    "git-tag": "git tag echo %npm_package_version%",
+    "postpublishl": "git tag v%npm_package_version%; git push origin --tags",
+    "postpublish": "git tag -a v%npm_package_version%; git push origin --tags",
+    "npm-publish": "npm publish"
   },
   "repository": {
     "type": "git",
