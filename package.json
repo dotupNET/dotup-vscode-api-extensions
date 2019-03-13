@@ -1,12 +1,9 @@
 {
   "name": "dotup-vscode-api-extensions",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "template for typescript libraries",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "engines": {
-    "vscode": "^1.32.0"
-  },
   "scripts": {
     "build": "tsc",
     "release": "npm run clean-build && npm run test-mocha && npm run gh-pages && npm publish",
