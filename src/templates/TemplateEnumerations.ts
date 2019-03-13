@@ -1,10 +1,12 @@
 export enum TemplateType {
-  file,
-  class,
-  method,
-  function,
-  property,
-  ImportStatement
+  file = 'file',
+  class = 'class',
+  method = 'method',
+  asyncMethod = 'asyncMethod',
+  function = 'function',
+  asyncFunction = 'asyncFunction',
+  property = 'property',
+  ImportStatement = ''
 }
 
 export enum TemplatePlaceHolder {

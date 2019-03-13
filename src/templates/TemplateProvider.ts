@@ -3,9 +3,9 @@ import { TemplateType } from './TemplateEnumerations';
 
 export class TemplateProvider implements ITemplateProvider {
 
-  getTemplate(template: TemplateType): string[] {
+  getTemplate(templateType: TemplateType): string[] {
 
-    switch (template) {
+    switch (templateType) {
       case TemplateType.file:
         // tslint:disable-next-line: no-invalid-template-strings
         return [`
@@ -43,7 +43,7 @@ export class TemplateProvider implements ITemplateProvider {
 
     }
 
-    return [];
+    throw new Error(`Template for "${templateType}" not configured`);
   }
 
 }

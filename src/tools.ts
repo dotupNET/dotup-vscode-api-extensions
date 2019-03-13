@@ -12,7 +12,9 @@ export namespace tools {
     const dt = new Date(Date.now()).toISOString();
 
     // remove T and everything after dot
-    return dt.replace(/T|\..+/g, ' ');
+    return dt
+      .replace(/T|\..+/g, ' ')
+      .trim();
   }
   /*
           // Remove everything from src

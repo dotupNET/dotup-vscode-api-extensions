@@ -1,5 +1,5 @@
-// tslint:disable-next-line: max-line-length
-import { ClassLikeDeclarationBase, ConstructorDeclaration, createMethodSignature, createModifier, createPropertySignature, MethodDeclaration, MethodSignature, Node, PropertyDeclaration, PropertySignature, SyntaxKind, Modifier, NodeArray } from 'typescript';
+// tslint:disable-next-line: max-line-length : no-implicit-dependencies
+import { ClassLikeDeclarationBase, ConstructorDeclaration, createMethodSignature, createModifier, createPropertySignature, MethodDeclaration, MethodSignature, Modifier, NodeArray, PropertyDeclaration, PropertySignature, SyntaxKind } from 'typescript';
 import { ClassDescriptor } from '../descriptors/ClassDescriptor';
 import { ExtendedNode } from '../interfaces/ExtendedNode';
 import { NodeAnalyser } from './NodeAnalyser';
@@ -41,7 +41,16 @@ export class ClassAnalyer {
           return true;
         }
 
-        return method.modifiers.some(item => item.kind === SyntaxKind.PublicKeyword);
+        return method.modifiers.some(item => {
+          switch (item.kind) {
+            case SyntaxKind.PrivateKeyword:
+            case SyntaxKind.ProtectedKeyword:
+              return false;
+
+            default:
+              return true;
+          }
+        });
       });
 
     // create method signatures

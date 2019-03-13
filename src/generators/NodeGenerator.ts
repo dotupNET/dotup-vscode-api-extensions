@@ -1,5 +1,5 @@
-// tslint:disable-next-line: max-line-length
-import { createCall, createExpressionStatement, createIdentifier, createToken, Identifier, Node, SyntaxKind, Token, TypeNode, PropertyAssignment, createPropertyAssignment, createPropertyAccess, createAssignment } from 'typescript';
+// tslint:disable-next-line: max-line-length : no-implicit-dependencies
+import { createAssignment, createCall, createExpressionStatement, createIdentifier, createPropertyAccess, createToken, Identifier, Node, SyntaxKind, Token, TypeNode } from 'typescript';
 import { NodePrinter } from './NodePrinter';
 
 // https://medium.com/@marvin_78330/creating-typescript-with-the-typescript-compiler-ac3370701d7f
@@ -48,9 +48,10 @@ export namespace NodeGenerator {
 
     const xy = NodePrinter.printNode(propertyAccess);
     const propertyAssignment = createAssignment(propertyAccess, createIdentifier(value));
-    const assignment = NodePrinter.printNode(propertyAssignment);
+    const expression = createExpressionStatement(propertyAssignment);
+    const assignment = NodePrinter.printNode(expression);
 
-    return propertyAssignment;
+    return expression;
     // return createIdentifier(`const result = ${objectName}.${xy}`);
   }
 
@@ -67,23 +68,28 @@ export namespace NodeGenerator {
   }
 
   // tslint:disable-next-line: max-line-length
-  export function getMethodCall(methodName: string, objectName: string, argNames?: string[], typeParameter?: TypeNode[], withResult: boolean = false): Node {
-    const params = argNames === undefined ? undefined : argNames.map(x => createIdentifier(x));
-    const methodIdentifier = createIdentifier(methodName);
-    const call = createCall(methodIdentifier, typeParameter, params);
+  export function getMethodCall(methodName: string, objectName: string, isAsync: boolean, argNames?: string[], typeParameter?: TypeNode[], withResult: boolean = false): Node {
 
+    // Create the call
+    const methodArguments = argNames === undefined ? undefined : argNames.map(x => createIdentifier(x));
+    const methodIdentifier = createIdentifier(methodName);
+    const call = createCall(methodIdentifier, typeParameter, methodArguments);
+
+    const awaitKeyword = isAsync ? 'await' : '';
+
+    // Create the expression
     const callExpression = createExpressionStatement(call);
     if (objectName === undefined) {
       if (withResult) {
-        return createIdentifier(`const result = ${NodePrinter.printNode(callExpression)};`);
+        return createIdentifier(`const result = ${awaitKeyword} ${NodePrinter.printNode(callExpression)}`);
       } else {
-        return callExpression;
+        return createIdentifier(`${awaitKeyword} ${NodePrinter.printNode(callExpression)}`);
       }
     } else {
       if (withResult) {
-        return createIdentifier(`const result = ${objectName}.${NodePrinter.printNode(callExpression)};`);
+        return createIdentifier(`const result = ${awaitKeyword} ${objectName}.${NodePrinter.printNode(callExpression)}`);
       } else {
-        return createIdentifier(`${objectName}.${NodePrinter.printNode(callExpression)};`);
+        return createIdentifier(`${awaitKeyword} ${objectName}.${NodePrinter.printNode(callExpression)}`);
       }
     }
   }

@@ -1,5 +1,5 @@
 // tslint:disable-next-line: no-implicit-dependencies
-import { createTypeParameterDeclaration, NodeArray, ParameterDeclaration, TypeParameterDeclaration, TypeNode, PropertySignature } from 'typescript';
+import { createTypeParameterDeclaration, NodeArray, ParameterDeclaration, PropertySignature, TypeParameterDeclaration } from 'typescript';
 import { IParameterDescriptor } from '../descriptors/IParameterDescriptor';
 import { NodeBuilder } from '../generators/NodeBuilder';
 import { NodePrinter } from '../generators/NodePrinter';

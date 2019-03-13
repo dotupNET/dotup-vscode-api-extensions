@@ -1,6 +1,6 @@
 // tslint:disable: newline-before-return
-// tslint:disable-next-line: max-line-length
-import { createPrinter, createSourceFile, NewLineKind, Node, ScriptKind, ScriptTarget, TypeNode } from 'typescript';
+// tslint:disable-next-line: no-implicit-dependencies
+import { Node, TypeNode } from 'typescript';
 import { ValueProvider } from '../providers/ValueProvider';
 import { NodeGenerator } from './NodeGenerator';
 
@@ -41,8 +41,8 @@ export class NodeBuilder {
     return this;
   }
 
-  addMethodCall(methodName: string, objectName: string, argNames?: string[], typeParameter?: TypeNode[]): this {
-    return this.add(NodeGenerator.getMethodCall(methodName, objectName, argNames));
+  addMethodCall(methodName: string, objectName: string, isAsync: boolean, argNames?: string[], typeParameter?: TypeNode[]): this {
+    return this.add(NodeGenerator.getMethodCall(methodName, objectName, isAsync, argNames, typeParameter));
   }
 
   addStatement(line: string): this {

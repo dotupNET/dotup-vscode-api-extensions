@@ -5,18 +5,22 @@ import { Node } from 'typescript';
 import { NodeBuilder } from './NodeBuilder';
 
 export enum MemberType {
+  AsyncMethod,
   Method,
+  AsyncFunction,
   Function,
   Property,
   ClassInstance
 }
 
 export class GeneratorResult {
+  readonly headers: NodeBuilder;
   readonly imports: NodeBuilder;
   readonly classes: KeyValuePair<string, ClassGeneratorResult>[];
 
   constructor() {
     this.imports = new NodeBuilder();
+    this.headers = new NodeBuilder();
     this.classes = [];
   }
 
