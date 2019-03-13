@@ -1,5 +1,5 @@
 // tslint:disable-next-line: no-implicit-dependencies
-import { createTypeParameterDeclaration, NodeArray, ParameterDeclaration, TypeParameterDeclaration } from 'typescript';
+import { createTypeParameterDeclaration, NodeArray, ParameterDeclaration, TypeParameterDeclaration, TypeNode, PropertySignature } from 'typescript';
 import { IParameterDescriptor } from '../descriptors/IParameterDescriptor';
 import { NodeBuilder } from '../generators/NodeBuilder';
 import { NodePrinter } from '../generators/NodePrinter';
@@ -30,6 +30,17 @@ export namespace NodeAnalyser {
         value: builder.valueProvider.getValue(p.type.getText())
       };
     });
+  }
+
+  export function getVariableDescriptor(prop: PropertySignature, nameProvider: (name: string) => string): IParameterDescriptor {
+    const builder = new NodeBuilder();
+
+    return {
+      name: nameProvider(prop.name.getText()),
+      // parameterDeclaration: p,
+      typeName: prop.type.getText(),
+      value: builder.valueProvider.getValue(prop.type.getText())
+    };
   }
 
 }

@@ -14,7 +14,13 @@ export namespace tools {
     // remove T and everything after dot
     return dt.replace(/T|\..+/g, ' ');
   }
+  /*
+          // Remove everything from src
+          const regeAfter = /(\/src|\\src\b)(?!.*\1).+/g;
 
+          // Remove everything till src
+          const regeTill = /.+(\/src|\\src\b)(?!.*\1)/g;
+   */
   export function getRelativePath(sourceFilePath: string, targetFilePath: string): string {
     const sourceDir = path.normalize(path.dirname(sourceFilePath));
     const targetDir = path.normalize(path.dirname(targetFilePath));

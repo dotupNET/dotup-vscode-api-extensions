@@ -1,16 +1,16 @@
 import * as path from 'path';
 // tslint:disable-next-line: no-implicit-dependencies
-import { createIdentifier, Identifier, LiteralLikeNode, MethodSignature, Node } from 'typescript';
+import { createIdentifier, Identifier, LiteralLikeNode, MethodSignature, Node, PropertySignature } from 'typescript';
 import { NodeAnalyser } from '../analyser/NodeAnalyser';
-import { SourceFileDescriptor, TargetFileDescriptor, ClassDescriptor } from '../descriptors';
+import { ClassDescriptor, SourceFileDescriptor, TargetFileDescriptor } from '../descriptors';
 import { IParameterDescriptor } from '../descriptors/IParameterDescriptor';
 import { IdentifierProvider } from '../providers/IdentifierProvider';
 import { tools } from '../tools';
 import { GeneratorContext } from './GeneratorContext';
 import { ClassGeneratorResult, GeneratorResult, MemberGeneratorResult, MemberType } from './GeneratorResult';
 import { NodeBuilder } from './NodeBuilder';
-import { NodePrinter } from './NodePrinter';
 import { NodeGenerator } from './NodeGenerator';
+import { NodePrinter } from './NodePrinter';
 
 export class TestGenerator {
   readonly identifierProvider: IdentifierProvider;
@@ -51,7 +51,6 @@ export class TestGenerator {
     const result = new ClassGeneratorResult();
     // const builder = new NodeBuilder();
     const classDescriptor = source.classDescriptors.find(item => item.className === className);
-    const methods = classDescriptor.methods;
 
     // source file import
     const template = `import { \${moduleName} } from '\${modulePath}';`;
@@ -66,8 +65,15 @@ export class TestGenerator {
     result.classImport = NodeGenerator.getStatement(imports);
 
     // Method calls
-    methods.forEach(m => {
+    classDescriptor.methods.forEach(m => {
       const memberCall = this.generateMethodCall(classDescriptor, m);
+      result.member.push(memberCall);
+      // builder.addNewLine();
+    });
+
+    // Property calls
+    classDescriptor.properties.forEach(p => {
+      const memberCall = this.generatePropertyCall(classDescriptor, p);
       result.member.push(memberCall);
       // builder.addNewLine();
     });
@@ -79,9 +85,12 @@ export class TestGenerator {
   generateMethodCall(classDescriptor: ClassDescriptor, method: MethodSignature): MemberGeneratorResult {
     const methodName = method.name.getText();
 
+    // Is this a method or a function with return value=
+    const methodReturnsResult = method.type !== undefined;
+
     // Result
     const result = new MemberGeneratorResult();
-    result.memberType = MemberType.Method;
+    result.memberType = methodReturnsResult ? MemberType.Function : MemberType.Method;
     result.memberName = methodName;
 
     // Class instance
@@ -103,7 +112,38 @@ export class TestGenerator {
     }
 
     // Create a call
-    result.statements.push(NodeGenerator.getMethodCall(methodName, instance.memberName, argumentNames));
+    result.statements.push(NodeGenerator.getMethodCall(methodName, instance.memberName, argumentNames, undefined, methodReturnsResult));
+
+    return result;
+  }
+
+  generatePropertyCall(classDescriptor: ClassDescriptor, property: PropertySignature): MemberGeneratorResult {
+    const propertyName = property.name.getText();
+
+    // Result
+    const result = new MemberGeneratorResult();
+    result.memberType = MemberType.Property;
+    result.memberName = propertyName;
+
+    // Class instance
+    const instance = this.generateClassInstance(classDescriptor);
+    result.variables.push(...instance.variables);
+    result.statements.push(...instance.statements);
+
+    // Get type descriptor
+    const variableDescriptor = NodeAnalyser.getVariableDescriptor(property, (name) => this.getName(name));
+
+    // Create variable for property
+    const variable = this.generateVariableDeclarations([variableDescriptor]);
+    result.variables.push(...variable);
+
+    result.propertySetVariableName = variableDescriptor.name;
+
+    // Create a set assignment
+    result.statements.push(NodeGenerator.getPropertySet(propertyName, instance.memberName, variableDescriptor.name));
+
+    // Create get assignment for result
+    result.statements.push(NodeGenerator.getPropertyGet(propertyName, instance.memberName, variableDescriptor.name));
 
     return result;
   }

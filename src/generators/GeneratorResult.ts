@@ -6,6 +6,7 @@ import { NodeBuilder } from './NodeBuilder';
 
 export enum MemberType {
   Method,
+  Function,
   Property,
   ClassInstance
 }
@@ -46,13 +47,16 @@ export class ClassGeneratorResult {
 
 export class MemberGeneratorResult {
   memberType: MemberType;
+  readonly resultStatements: Node[];
   readonly statements: Node[];
   readonly variables: Node[];
+  propertySetVariableName: string;
   memberName: string;
 
   constructor() {
     this.variables = [];
     this.statements = [];
+    this.resultStatements = [];
   }
 
 }

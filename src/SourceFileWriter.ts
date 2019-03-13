@@ -1,5 +1,8 @@
 // tslint:disable: non-literal-fs-path
 import * as fs from 'fs';
+import * as path from 'path';
+// tslint:disable-next-line: no-require-imports
+import mkdirp = require('mkdirp');
 import { TargetFileDescriptor } from './descriptors/TargetFileDescriptor';
 import { SourceFileGenerator } from './generators/SourceFileGenerator';
 
@@ -19,6 +22,12 @@ export class SourceFileWriter {
 
   writeString(targetDescriptor: TargetFileDescriptor, fileContent: string): void {
     if (!fs.existsSync(targetDescriptor.targetFilePath)) {
+      // Create directory if missing
+      const dir = path.dirname(targetDescriptor.targetFilePath);
+      if (!fs.existsSync(dir)) {
+        mkdirp.sync(dir);
+      }
+
       // Create new interface file
       fs.closeSync(fs.openSync(targetDescriptor.targetFilePath, 'w'));
     }

@@ -1,8 +1,8 @@
-// tslint:disable: newline-before-return
 // tslint:disable-next-line: max-line-length
-import { createCall, createExpressionStatement, createIdentifier, createPrinter, createSourceFile, createToken, EmitHint, Identifier, NewLineKind, Node, ScriptKind, ScriptTarget, SyntaxKind, Token, TypeNode } from 'typescript';
-import { NodeBuilder } from './NodeBuilder';
+import { createCall, createExpressionStatement, createIdentifier, createToken, Identifier, Node, SyntaxKind, Token, TypeNode, PropertyAssignment, createPropertyAssignment, createPropertyAccess, createAssignment } from 'typescript';
 import { NodePrinter } from './NodePrinter';
+
+// https://medium.com/@marvin_78330/creating-typescript-with-the-typescript-compiler-ac3370701d7f
 
 export namespace NodeGenerator {
 
@@ -34,21 +34,58 @@ export namespace NodeGenerator {
         }
       }
     }
+
     return result;
   }
 
-  export function getMethodCall(methodName: string, objectName: string, argNames?: string[], typeParameter?: TypeNode[]): Node {
+  // tslint:disable-next-line: max-line-length
+  export function getPropertySet(propertyName: string, objectName: string, value: string): Node {
+
+    const propertyAccess = createPropertyAccess(
+      createIdentifier(objectName),
+      propertyName
+    );
+
+    const xy = NodePrinter.printNode(propertyAccess);
+    const propertyAssignment = createAssignment(propertyAccess, createIdentifier(value));
+    const assignment = NodePrinter.printNode(propertyAssignment);
+
+    return propertyAssignment;
+    // return createIdentifier(`const result = ${objectName}.${xy}`);
+  }
+
+  export function getPropertyGet(propertyName: string, objectName: string, value: string): Node {
+
+    const propertyAccess = createPropertyAccess(
+      createIdentifier(objectName),
+      propertyName
+    );
+
+    const getValue = NodePrinter.printNode(propertyAccess);
+
+    return createIdentifier(`const result = ${getValue};`);
+  }
+
+  // tslint:disable-next-line: max-line-length
+  export function getMethodCall(methodName: string, objectName: string, argNames?: string[], typeParameter?: TypeNode[], withResult: boolean = false): Node {
     const params = argNames === undefined ? undefined : argNames.map(x => createIdentifier(x));
     const methodIdentifier = createIdentifier(methodName);
     const call = createCall(methodIdentifier, typeParameter, params);
 
     const callExpression = createExpressionStatement(call);
     if (objectName === undefined) {
-      return callExpression;
+      if (withResult) {
+        return createIdentifier(`const result = ${NodePrinter.printNode(callExpression)};`);
+      } else {
+        return callExpression;
+      }
     } else {
-      return createIdentifier(`${objectName}.${NodePrinter.printNode(callExpression)}`);
+      if (withResult) {
+        return createIdentifier(`const result = ${objectName}.${NodePrinter.printNode(callExpression)};`);
+      } else {
+        return createIdentifier(`${objectName}.${NodePrinter.printNode(callExpression)};`);
+      }
     }
-
   }
 
   export function getStatement(line: string): Identifier {

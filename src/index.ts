@@ -10,6 +10,9 @@ export * from './SourceFileWriter';
 export * from './tools';
 export * from './types';
 export * from './VsCodeExtensions';
+export * from './DirectoryInfo';
 
+export * from './templates/ITemplateProvider';
+export * from './templates/TemplateEnumerations';
 export * from './templates/TemplateParser';
 export * from './templates/TemplateProvider';

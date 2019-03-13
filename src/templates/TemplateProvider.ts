@@ -1,55 +1,49 @@
-export enum TemplateType {
-  File,
-  Class,
-  MethodTest,
-  Property,
-  ImportStatement
-}
+import { ITemplateProvider } from './ITemplateProvider';
+import { TemplateType } from './TemplateEnumerations';
 
-export enum TemplatePlaceHolder {
-  Imports = 'Imports',
-  FileTests = 'FileTests',
-  ClassTests = 'ClassTests',
-  MethodTests = 'MethodTests',
-  Declarations = 'Declarations',
+export class TemplateProvider implements ITemplateProvider {
 
-  FileName = 'FileName',
-  ClassName = 'ClassName',
-  MethodName = 'MethodName'
-}
-
-export class TemplateProvider {
-
-  getTemplate(template: TemplateType): string {
+  getTemplate(template: TemplateType): string[] {
 
     switch (template) {
-      case TemplateType.File:
+      case TemplateType.file:
         // tslint:disable-next-line: no-invalid-template-strings
-        return `
+        return [`
           \${Imports}
-          \${FileTests}`;
+          \${FileTests}`];
 
-      case TemplateType.Class:
+      case TemplateType.class:
         // tslint:disable-next-line: no-invalid-template-strings
-        return `
+        return [`
           describe('Test class \${ClassName}', () => {
             \${ClassTests}
-          });`;
+          });`];
 
-      case TemplateType.MethodTest:
+      case TemplateType.method:
         // tslint:disable-next-line: no-invalid-template-strings
-        return `
+        return [`
           it('\${MethodName}', () => {
             // Arguments
             \${Declarations}
 
             // Method call
-            \${MethodTests}
-          });`;
+            \${MemberTests}
+          });`];
+
+      case TemplateType.function:
+        // tslint:disable-next-line: no-invalid-template-strings
+        return [`
+          it('\${MethodName}', () => {
+            // Arguments
+            \${Declarations}
+
+            // Method call
+            \${MemberTests}
+          });`];
 
     }
 
-    return '';
+    return [];
   }
 
 }

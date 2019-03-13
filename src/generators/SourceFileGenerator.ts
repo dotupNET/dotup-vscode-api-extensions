@@ -3,8 +3,6 @@ import { createPrinter, createSourceFile, EmitHint, NewLineKind, Node, ScriptKin
 import { TargetFileDescriptor } from '../descriptors/TargetFileDescriptor';
 // import { InterfaceGenerator } from './InterfaceGenerator';
 
-// https://medium.com/@marvin_78330/creating-typescript-with-the-typescript-compiler-ac3370701d7f
-
 export class SourceFileGenerator {
 
   createFile(targetDescriptor: TargetFileDescriptor): SourceFile {
