@@ -140,6 +140,9 @@ export class TestGenerator {
   }
 
   isAsyncMethod(method: MethodSignature): boolean {
+    if (method.type === undefined) {
+      return false;
+    }
 
     switch (method.type.kind) {
       case SyntaxKind.TypeReference:
@@ -153,6 +156,9 @@ export class TestGenerator {
 
   isMethodWithResult(method: MethodSignature): boolean {
 
+    if (method.type === undefined) {
+      return false;
+    }
     switch (method.type.kind) {
       case SyntaxKind.VoidKeyword:
         return false;
