@@ -97,9 +97,12 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="testgenerator.html#generateclasstest" class="tsd-kind-icon">generate<wbr>Class<wbr>Test</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="testgenerator.html#generateimports" class="tsd-kind-icon">generate<wbr>Imports</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="testgenerator.html#generatemethodcall" class="tsd-kind-icon">generate<wbr>Method<wbr>Call</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="testgenerator.html#generatepropertycall" class="tsd-kind-icon">generate<wbr>Property<wbr>Call</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="testgenerator.html#generatetests" class="tsd-kind-icon">generate<wbr>Tests</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="testgenerator.html#generatevariabledeclarations" class="tsd-kind-icon">generate<wbr>Variable<wbr>Declarations</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="testgenerator.html#getname" class="tsd-kind-icon">get<wbr>Name</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="testgenerator.html#isasyncmethod" class="tsd-kind-icon">is<wbr>Async<wbr>Method</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="testgenerator.html#ismethodwithresult" class="tsd-kind-icon">is<wbr>Method<wbr>With<wbr>Result</a></li>
 							</ul>
 						</section>
 					</div>
@@ -117,7 +120,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/generators/TestGenerator.ts#L16">generators/TestGenerator.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/TestGenerator.ts#L16">generators/TestGenerator.ts:16</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -139,7 +142,7 @@
 					<div class="tsd-signature tsd-kind-icon">identifier<wbr>Provider<span class="tsd-signature-symbol">:</span> <a href="identifierprovider.html" class="tsd-signature-type">IdentifierProvider</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/generators/TestGenerator.ts#L16">generators/TestGenerator.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/TestGenerator.ts#L16">generators/TestGenerator.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -156,7 +159,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/generators/TestGenerator.ts#L111">generators/TestGenerator.ts:111</a></li>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/TestGenerator.ts#L211">generators/TestGenerator.ts:211</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -179,7 +182,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/generators/TestGenerator.ts#L50">generators/TestGenerator.ts:50</a></li>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/TestGenerator.ts#L58">generators/TestGenerator.ts:58</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -208,7 +211,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/generators/TestGenerator.ts#L146">generators/TestGenerator.ts:146</a></li>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/TestGenerator.ts#L246">generators/TestGenerator.ts:246</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -231,7 +234,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/generators/TestGenerator.ts#L79">generators/TestGenerator.ts:79</a></li>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/TestGenerator.ts#L93">generators/TestGenerator.ts:93</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -248,6 +251,32 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="generatepropertycall" class="tsd-anchor"></a>
+					<h3>generate<wbr>Property<wbr>Call</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">generate<wbr>Property<wbr>Call<span class="tsd-signature-symbol">(</span>classDescriptor<span class="tsd-signature-symbol">: </span><a href="classdescriptor.html" class="tsd-signature-type">ClassDescriptor</a>, property<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertySignature</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="membergeneratorresult.html" class="tsd-signature-type">MemberGeneratorResult</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/TestGenerator.ts#L180">generators/TestGenerator.ts:180</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>classDescriptor: <a href="classdescriptor.html" class="tsd-signature-type">ClassDescriptor</a></h5>
+								</li>
+								<li>
+									<h5>property: <span class="tsd-signature-type">PropertySignature</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="membergeneratorresult.html" class="tsd-signature-type">MemberGeneratorResult</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="generatetests" class="tsd-anchor"></a>
 					<h3>generate<wbr>Tests</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -257,7 +286,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/generators/TestGenerator.ts#L26">generators/TestGenerator.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/TestGenerator.ts#L26">generators/TestGenerator.ts:26</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -280,7 +309,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/generators/TestGenerator.ts#L218">generators/TestGenerator.ts:218</a></li>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/TestGenerator.ts#L318">generators/TestGenerator.ts:318</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -303,7 +332,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/generators/TestGenerator.ts#L22">generators/TestGenerator.ts:22</a></li>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/TestGenerator.ts#L22">generators/TestGenerator.ts:22</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -313,6 +342,52 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isasyncmethod" class="tsd-anchor"></a>
+					<h3>is<wbr>Async<wbr>Method</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Async<wbr>Method<span class="tsd-signature-symbol">(</span>method<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MethodSignature</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/TestGenerator.ts#L142">generators/TestGenerator.ts:142</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>method: <span class="tsd-signature-type">MethodSignature</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="ismethodwithresult" class="tsd-anchor"></a>
+					<h3>is<wbr>Method<wbr>With<wbr>Result</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Method<wbr>With<wbr>Result<span class="tsd-signature-symbol">(</span>method<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MethodSignature</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/TestGenerator.ts#L154">generators/TestGenerator.ts:154</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>method: <span class="tsd-signature-type">MethodSignature</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -352,6 +427,9 @@
 								<a href="testgenerator.html#generatemethodcall" class="tsd-kind-icon">generate<wbr>Method<wbr>Call</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="testgenerator.html#generatepropertycall" class="tsd-kind-icon">generate<wbr>Property<wbr>Call</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="testgenerator.html#generatetests" class="tsd-kind-icon">generate<wbr>Tests</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -359,6 +437,12 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 								<a href="testgenerator.html#getname" class="tsd-kind-icon">get<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="testgenerator.html#isasyncmethod" class="tsd-kind-icon">is<wbr>Async<wbr>Method</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="testgenerator.html#ismethodwithresult" class="tsd-kind-icon">is<wbr>Method<wbr>With<wbr>Result</a>
 							</li>
 						</ul>
 					</li>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SourceToTargetFileConverter | dotup-vscode-api-extensions</title>
+	<title>ITemplateProvider | dotup-vscode-api-extensions</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="sourcetotargetfileconverter.html">SourceToTargetFileConverter</a>
+					<a href="itemplateprovider.html">ITemplateProvider</a>
 				</li>
 			</ul>
-			<h1>Class SourceToTargetFileConverter</h1>
+			<h1>Interface ITemplateProvider</h1>
 		</div>
 	</div>
 </header>
@@ -70,8 +70,14 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">SourceToTargetFileConverter</span>
+						<span class="target">ITemplateProvider</span>
 					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implemented by</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../classes/templateprovider.html" class="tsd-signature-type">TemplateProvider</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -81,7 +87,7 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="sourcetotargetfileconverter.html#buildnodes" class="tsd-kind-icon">build<wbr>Nodes</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="itemplateprovider.html#gettemplate" class="tsd-kind-icon">get<wbr>Template</a></li>
 							</ul>
 						</section>
 					</div>
@@ -89,32 +95,26 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="buildnodes" class="tsd-anchor"></a>
-					<h3>build<wbr>Nodes</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">build<wbr>Nodes<span class="tsd-signature-symbol">(</span>targetFilePath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, sourceFileDescriptor<span class="tsd-signature-symbol">: </span><a href="sourcefiledescriptor.html" class="tsd-signature-type">SourceFileDescriptor</a>, nodeBuilder<span class="tsd-signature-symbol">: </span><a href="../interfaces/inodebuilder.html" class="tsd-signature-type">INodeBuilder</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="targetfiledescriptor.html" class="tsd-signature-type">TargetFileDescriptor</a></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="gettemplate" class="tsd-anchor"></a>
+					<h3>get<wbr>Template</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Template<span class="tsd-signature-symbol">(</span>template<span class="tsd-signature-symbol">: </span><a href="../enums/templatetype.html" class="tsd-signature-type">TemplateType</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/SourceToTargetFileConverter.ts#L14">generators/SourceToTargetFileConverter.ts:14</a></li>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/templates/ITemplateProvider.ts#L8">templates/ITemplateProvider.ts:8</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>targetFilePath: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>sourceFileDescriptor: <a href="sourcefiledescriptor.html" class="tsd-signature-type">SourceFileDescriptor</a></h5>
-								</li>
-								<li>
-									<h5>nodeBuilder: <a href="../interfaces/inodebuilder.html" class="tsd-signature-type">INodeBuilder</a></h5>
+									<h5>template: <a href="../enums/templatetype.html" class="tsd-signature-type">TemplateType</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="targetfiledescriptor.html" class="tsd-signature-type">TargetFileDescriptor</a></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -132,11 +132,11 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class">
-						<a href="sourcetotargetfileconverter.html" class="tsd-kind-icon">Source<wbr>ToTarget<wbr>File<wbr>Converter</a>
+					<li class="current tsd-kind-interface">
+						<a href="itemplateprovider.html" class="tsd-kind-icon">ITemplate<wbr>Provider</a>
 						<ul>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="sourcetotargetfileconverter.html#buildnodes" class="tsd-kind-icon">build<wbr>Nodes</a>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="itemplateprovider.html#gettemplate" class="tsd-kind-icon">get<wbr>Template</a>
 							</li>
 						</ul>
 					</li>

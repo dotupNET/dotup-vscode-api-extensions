@@ -77,6 +77,8 @@
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="nodegenerator.html#getmethodcall" class="tsd-kind-icon">get<wbr>Method<wbr>Call</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="nodegenerator.html#getmultilinecomment" class="tsd-kind-icon">get<wbr>Multi<wbr>Line<wbr>Comment</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="nodegenerator.html#getnewline" class="tsd-kind-icon">get<wbr>New<wbr>Line</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="nodegenerator.html#getpropertyget" class="tsd-kind-icon">get<wbr>Property<wbr>Get</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="nodegenerator.html#getpropertyset" class="tsd-kind-icon">get<wbr>Property<wbr>Set</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="nodegenerator.html#getstatement" class="tsd-kind-icon">get<wbr>Statement</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="nodegenerator.html#join" class="tsd-kind-icon">join</a></li>
 							</ul>
@@ -96,7 +98,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/generators/NodeGenerator.ts#L13">generators/NodeGenerator.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/NodeGenerator.ts#L13">generators/NodeGenerator.ts:13</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -113,13 +115,13 @@
 					<a name="getmethodcall" class="tsd-anchor"></a>
 					<h3>get<wbr>Method<wbr>Call</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Method<wbr>Call<span class="tsd-signature-symbol">(</span>methodName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, objectName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, argNames<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, typeParameter<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">TypeNode</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Method<wbr>Call<span class="tsd-signature-symbol">(</span>methodName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, objectName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, isAsync<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, argNames<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, typeParameter<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">TypeNode</span><span class="tsd-signature-symbol">[]</span>, withResult<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/generators/NodeGenerator.ts#L40">generators/NodeGenerator.ts:40</a></li>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/NodeGenerator.ts#L71">generators/NodeGenerator.ts:71</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -131,10 +133,16 @@
 									<h5>objectName: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
+									<h5>isAsync: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> argNames: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> typeParameter: <span class="tsd-signature-type">TypeNode</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> withResult: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Node</span></h4>
@@ -151,7 +159,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/generators/NodeGenerator.ts#L17">generators/NodeGenerator.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/NodeGenerator.ts#L17">generators/NodeGenerator.ts:17</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -174,10 +182,68 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/generators/NodeGenerator.ts#L9">generators/NodeGenerator.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/NodeGenerator.ts#L9">generators/NodeGenerator.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Token</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">NewLineTrivia</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="getpropertyget" class="tsd-anchor"></a>
+					<h3>get<wbr>Property<wbr>Get</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Property<wbr>Get<span class="tsd-signature-symbol">(</span>propertyName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, objectName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/NodeGenerator.ts#L58">generators/NodeGenerator.ts:58</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>propertyName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>objectName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Node</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="getpropertyset" class="tsd-anchor"></a>
+					<h3>get<wbr>Property<wbr>Set</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Property<wbr>Set<span class="tsd-signature-symbol">(</span>propertyName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, objectName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/NodeGenerator.ts#L42">generators/NodeGenerator.ts:42</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>propertyName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>objectName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Node</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -191,7 +257,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/generators/NodeGenerator.ts#L54">generators/NodeGenerator.ts:54</a></li>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/NodeGenerator.ts#L97">generators/NodeGenerator.ts:97</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -214,7 +280,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/generators/NodeGenerator.ts#L25">generators/NodeGenerator.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/NodeGenerator.ts#L25">generators/NodeGenerator.ts:25</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -262,6 +328,12 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="nodegenerator.html#getnewline" class="tsd-kind-icon">get<wbr>New<wbr>Line</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="nodegenerator.html#getpropertyget" class="tsd-kind-icon">get<wbr>Property<wbr>Get</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="nodegenerator.html#getpropertyset" class="tsd-kind-icon">get<wbr>Property<wbr>Set</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="nodegenerator.html#getstatement" class="tsd-kind-icon">get<wbr>Statement</a>

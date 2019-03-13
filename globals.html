@@ -89,6 +89,7 @@
 								<li class="tsd-kind-class"><a href="classes/classanalyer.html" class="tsd-kind-icon">Class<wbr>Analyer</a></li>
 								<li class="tsd-kind-class"><a href="classes/classdescriptor.html" class="tsd-kind-icon">Class<wbr>Descriptor</a></li>
 								<li class="tsd-kind-class"><a href="classes/classgeneratorresult.html" class="tsd-kind-icon">Class<wbr>Generator<wbr>Result</a></li>
+								<li class="tsd-kind-class"><a href="classes/directoryinfo.html" class="tsd-kind-icon">Directory<wbr>Info</a></li>
 								<li class="tsd-kind-class"><a href="classes/fileanalyser.html" class="tsd-kind-icon">File<wbr>Analyser</a></li>
 								<li class="tsd-kind-class"><a href="classes/generatorcontext.html" class="tsd-kind-icon">Generator<wbr>Context</a></li>
 								<li class="tsd-kind-class"><a href="classes/generatorresult.html" class="tsd-kind-icon">Generator<wbr>Result</a></li>
@@ -117,15 +118,18 @@
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-interface"><a href="interfaces/extendednode.html" class="tsd-kind-icon">Extended<wbr>Node</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/iconfigprovider.html" class="tsd-kind-icon">IConfig<wbr>Provider</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/inodebuilder.html" class="tsd-kind-icon">INode<wbr>Builder</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/iparameterdescriptor.html" class="tsd-kind-icon">IParameter<wbr>Descriptor</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/iregistercommandhandler.html" class="tsd-kind-icon">IRegister<wbr>Command<wbr>Handler</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/iregistertexteditorcommandhandler.html" class="tsd-kind-icon">IRegister<wbr>Text<wbr>Editor<wbr>Command<wbr>Handler</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/itemplateprovider.html" class="tsd-kind-icon">ITemplate<wbr>Provider</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-is-not-exported"><a href="globals.html#calltemplatetypes" class="tsd-kind-icon">Call<wbr>Template<wbr>Types</a></li>
 								<li class="tsd-kind-type-alias"><a href="globals.html#icommandhandler" class="tsd-kind-icon">ICommand<wbr>Handler</a></li>
 								<li class="tsd-kind-type-alias"><a href="globals.html#registercommandcallback" class="tsd-kind-icon">register<wbr>Command<wbr>Callback</a></li>
 								<li class="tsd-kind-type-alias"><a href="globals.html#registertexteditorcommandcallback" class="tsd-kind-icon">register<wbr>Text<wbr>Editor<wbr>Command<wbr>Callback</a></li>
@@ -149,13 +153,23 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-is-not-exported">
+					<a name="calltemplatetypes" class="tsd-anchor"></a>
+					<h3>Call<wbr>Template<wbr>Types</h3>
+					<div class="tsd-signature tsd-kind-icon">Call<wbr>Template<wbr>Types<span class="tsd-signature-symbol">:</span> <a href="enums/templatetype.html#method" class="tsd-signature-type">method</a><span class="tsd-signature-symbol"> | </span><a href="enums/templatetype.html#function" class="tsd-signature-type">function</a><span class="tsd-signature-symbol"> | </span><a href="enums/templatetype.html#asyncfunction" class="tsd-signature-type">asyncFunction</a><span class="tsd-signature-symbol"> | </span><a href="enums/templatetype.html#asyncmethod" class="tsd-signature-type">asyncMethod</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/templates/TemplateParser.ts#L6">templates/TemplateParser.ts:6</a></li>
+						</ul>
+					</aside>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias">
 					<a name="icommandhandler" class="tsd-anchor"></a>
 					<h3>ICommand<wbr>Handler</h3>
 					<div class="tsd-signature tsd-kind-icon">ICommand<wbr>Handler<span class="tsd-signature-symbol">:</span> <a href="interfaces/iregistercommandhandler.html" class="tsd-signature-type">IRegisterCommandHandler</a><span class="tsd-signature-symbol"> | </span><a href="interfaces/iregistertexteditorcommandhandler.html" class="tsd-signature-type">IRegisterTextEditorCommandHandler</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/types.ts#L23">types.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/types.ts#L23">types.ts:23</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -165,7 +179,7 @@
 					<div class="tsd-signature tsd-kind-icon">register<wbr>Command<wbr>Callback<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/types.ts#L19">types.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/types.ts#L19">types.ts:19</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -196,7 +210,7 @@
 					<div class="tsd-signature tsd-kind-icon">register<wbr>Text<wbr>Editor<wbr>Command<wbr>Callback<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/types.ts#L21">types.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/types.ts#L21">types.ts:21</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -236,7 +250,7 @@
 					<div class="tsd-signature tsd-kind-icon">sample<span class="tsd-signature-symbol">:</span> <a href="classes/sample.html" class="tsd-signature-type">Sample</a><span class="tsd-signature-symbol"> =&nbsp;new Sample(4)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/sample.ts#L82">sample.ts:82</a></li>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/sample.ts#L82">sample.ts:82</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -253,7 +267,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/types.ts#L33">types.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/types.ts#L33">types.ts:33</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -282,7 +296,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/types.ts#L46">types.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/types.ts#L46">types.ts:46</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -339,6 +353,9 @@
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/classgeneratorresult.html" class="tsd-kind-icon">Class<wbr>Generator<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/directoryinfo.html" class="tsd-kind-icon">Directory<wbr>Info</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/fileanalyser.html" class="tsd-kind-icon">File<wbr>Analyser</a>
@@ -410,6 +427,9 @@
 						<a href="interfaces/extendednode.html" class="tsd-kind-icon">Extended<wbr>Node</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/iconfigprovider.html" class="tsd-kind-icon">IConfig<wbr>Provider</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/inodebuilder.html" class="tsd-kind-icon">INode<wbr>Builder</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -420,6 +440,12 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/iregistertexteditorcommandhandler.html" class="tsd-kind-icon">IRegister<wbr>Text<wbr>Editor<wbr>Command<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/itemplateprovider.html" class="tsd-kind-icon">ITemplate<wbr>Provider</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="globals.html#calltemplatetypes" class="tsd-kind-icon">Call<wbr>Template<wbr>Types</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#icommandhandler" class="tsd-kind-icon">ICommand<wbr>Handler</a>

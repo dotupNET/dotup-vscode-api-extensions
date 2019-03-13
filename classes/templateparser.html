@@ -93,10 +93,11 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="templateparser.html#generatecallstatements" class="tsd-kind-icon">generate<wbr>Call<wbr>Statements</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="templateparser.html#generateclassstatements" class="tsd-kind-icon">generate<wbr>Class<wbr>Statements</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="templateparser.html#generatefile" class="tsd-kind-icon">generate<wbr>File</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="templateparser.html#generatefilestatements" class="tsd-kind-icon">generate<wbr>File<wbr>Statements</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="templateparser.html#generatemethodstatements" class="tsd-kind-icon">generate<wbr>Method<wbr>Statements</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="templateparser.html#generatepropertystatements" class="tsd-kind-icon">generate<wbr>Property<wbr>Statements</a></li>
 							</ul>
 						</section>
 					</div>
@@ -108,19 +109,19 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Template<wbr>Parser<span class="tsd-signature-symbol">(</span>templateProvider<span class="tsd-signature-symbol">: </span><a href="templateprovider.html" class="tsd-signature-type">TemplateProvider</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="templateparser.html" class="tsd-signature-type">TemplateParser</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Template<wbr>Parser<span class="tsd-signature-symbol">(</span>templateProvider<span class="tsd-signature-symbol">: </span><a href="../interfaces/itemplateprovider.html" class="tsd-signature-type">ITemplateProvider</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="templateparser.html" class="tsd-signature-type">TemplateParser</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/templates/TemplateParser.ts#L6">templates/TemplateParser.ts:6</a></li>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/templates/TemplateParser.ts#L9">templates/TemplateParser.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>templateProvider: <a href="templateprovider.html" class="tsd-signature-type">TemplateProvider</a></h5>
+									<h5>templateProvider: <a href="../interfaces/itemplateprovider.html" class="tsd-signature-type">ITemplateProvider</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="templateparser.html" class="tsd-signature-type">TemplateParser</a></h4>
@@ -133,16 +134,48 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="templateprovider" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> template<wbr>Provider</h3>
-					<div class="tsd-signature tsd-kind-icon">template<wbr>Provider<span class="tsd-signature-symbol">:</span> <a href="templateprovider.html" class="tsd-signature-type">TemplateProvider</a></div>
+					<div class="tsd-signature tsd-kind-icon">template<wbr>Provider<span class="tsd-signature-symbol">:</span> <a href="../interfaces/itemplateprovider.html" class="tsd-signature-type">ITemplateProvider</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/templates/TemplateParser.ts#L6">templates/TemplateParser.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/templates/TemplateParser.ts#L9">templates/TemplateParser.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="generatecallstatements" class="tsd-anchor"></a>
+					<h3>generate<wbr>Call<wbr>Statements</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">generate<wbr>Call<wbr>Statements<span class="tsd-signature-symbol">(</span>className<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, test<span class="tsd-signature-symbol">: </span><a href="membergeneratorresult.html" class="tsd-signature-type">MemberGeneratorResult</a>, templateType<span class="tsd-signature-symbol">: </span><a href="../globals.html#calltemplatetypes" class="tsd-signature-type">CallTemplateTypes</a>, callResult<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/templates/TemplateParser.ts#L175">templates/TemplateParser.ts:175</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>className: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>test: <a href="membergeneratorresult.html" class="tsd-signature-type">MemberGeneratorResult</a></h5>
+								</li>
+								<li>
+									<h5>templateType: <a href="../globals.html#calltemplatetypes" class="tsd-signature-type">CallTemplateTypes</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> callResult: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="generateclassstatements" class="tsd-anchor"></a>
 					<h3>generate<wbr>Class<wbr>Statements</h3>
@@ -153,7 +186,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/templates/TemplateParser.ts#L54">templates/TemplateParser.ts:54</a></li>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/templates/TemplateParser.ts#L103">templates/TemplateParser.ts:103</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -179,7 +212,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/templates/TemplateParser.ts#L12">templates/TemplateParser.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/templates/TemplateParser.ts#L15">templates/TemplateParser.ts:15</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -196,13 +229,13 @@
 					<a name="generatefilestatements" class="tsd-anchor"></a>
 					<h3>generate<wbr>File<wbr>Statements</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">generate<wbr>File<wbr>Statements<span class="tsd-signature-symbol">(</span>imports<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, fileTestStatements<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">generate<wbr>File<wbr>Statements<span class="tsd-signature-symbol">(</span>imports<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, fileTestStatements<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/templates/TemplateParser.ts#L44">templates/TemplateParser.ts:44</a></li>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/templates/TemplateParser.ts#L85">templates/TemplateParser.ts:85</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -214,25 +247,28 @@
 									<h5>fileTestStatements: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="generatemethodstatements" class="tsd-anchor"></a>
-					<h3>generate<wbr>Method<wbr>Statements</h3>
+					<a name="generatepropertystatements" class="tsd-anchor"></a>
+					<h3>generate<wbr>Property<wbr>Statements</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">generate<wbr>Method<wbr>Statements<span class="tsd-signature-symbol">(</span>test<span class="tsd-signature-symbol">: </span><a href="membergeneratorresult.html" class="tsd-signature-type">MemberGeneratorResult</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">generate<wbr>Property<wbr>Statements<span class="tsd-signature-symbol">(</span>className<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, test<span class="tsd-signature-symbol">: </span><a href="membergeneratorresult.html" class="tsd-signature-type">MemberGeneratorResult</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/fa6c239/src/templates/TemplateParser.ts#L65">templates/TemplateParser.ts:65</a></li>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/templates/TemplateParser.ts#L205">templates/TemplateParser.ts:205</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
+								<li>
+									<h5>className: <span class="tsd-signature-type">string</span></h5>
+								</li>
 								<li>
 									<h5>test: <a href="membergeneratorresult.html" class="tsd-signature-type">MemberGeneratorResult</a></h5>
 								</li>
@@ -265,6 +301,9 @@
 								<a href="templateparser.html#templateprovider" class="tsd-kind-icon">template<wbr>Provider</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="templateparser.html#generatecallstatements" class="tsd-kind-icon">generate<wbr>Call<wbr>Statements</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="templateparser.html#generateclassstatements" class="tsd-kind-icon">generate<wbr>Class<wbr>Statements</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -274,7 +313,7 @@
 								<a href="templateparser.html#generatefilestatements" class="tsd-kind-icon">generate<wbr>File<wbr>Statements</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="templateparser.html#generatemethodstatements" class="tsd-kind-icon">generate<wbr>Method<wbr>Statements</a>
+								<a href="templateparser.html#generatepropertystatements" class="tsd-kind-icon">generate<wbr>Property<wbr>Statements</a>
 							</li>
 						</ul>
 					</li>

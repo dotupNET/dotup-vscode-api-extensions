@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>NodePrinter | dotup-vscode-api-extensions</title>
+	<title>DirectoryInfo | dotup-vscode-api-extensions</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="nodeprinter.html">NodePrinter</a>
+					<a href="directoryinfo.html">DirectoryInfo</a>
 				</li>
 			</ul>
-			<h1>Class NodePrinter</h1>
+			<h1>Class DirectoryInfo</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">NodePrinter</span>
+						<span class="target">DirectoryInfo</span>
 					</li>
 				</ul>
 			</section>
@@ -81,16 +81,15 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="nodeprinter.html#printer" class="tsd-kind-icon">printer</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="nodeprinter.html#tempfile" class="tsd-kind-icon">temp<wbr>File</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Methods</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="nodeprinter.html#initializeprinter" class="tsd-kind-icon">initialize<wbr>Printer</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="nodeprinter.html#printnode" class="tsd-kind-icon">print<wbr>Node</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="nodeprinter.html#printnode-1" class="tsd-kind-icon">print<wbr>Node</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="directoryinfo.html#relativefromsourcetoroot" class="tsd-kind-icon">relative<wbr>From<wbr>Source<wbr>ToRoot</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="directoryinfo.html#relativefromtargettoroot" class="tsd-kind-icon">relative<wbr>From<wbr>Target<wbr>ToRoot</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="directoryinfo.html#rootpath" class="tsd-kind-icon">root<wbr>Path</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="directoryinfo.html#sourcedirectoryname" class="tsd-kind-icon">source<wbr>Directory<wbr>Name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="directoryinfo.html#sourcefilepath" class="tsd-kind-icon">source<wbr>File<wbr>Path</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="directoryinfo.html#sourcepath" class="tsd-kind-icon">source<wbr>Path</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="directoryinfo.html#targetdirectoryname" class="tsd-kind-icon">target<wbr>Directory<wbr>Name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="directoryinfo.html#targetfilepath" class="tsd-kind-icon">target<wbr>File<wbr>Path</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="directoryinfo.html#targetpath" class="tsd-kind-icon">target<wbr>Path</a></li>
 							</ul>
 						</section>
 					</div>
@@ -99,90 +98,94 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="printer" class="tsd-anchor"></a>
-					<h3>printer</h3>
-					<div class="tsd-signature tsd-kind-icon">printer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Printer</span></div>
+					<a name="relativefromsourcetoroot" class="tsd-anchor"></a>
+					<h3>relative<wbr>From<wbr>Source<wbr>ToRoot</h3>
+					<div class="tsd-signature tsd-kind-icon">relative<wbr>From<wbr>Source<wbr>ToRoot<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/NodePrinter.ts#L6">generators/NodePrinter.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/DirectoryInfo.ts#L15">DirectoryInfo.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="tempfile" class="tsd-anchor"></a>
-					<h3>temp<wbr>File</h3>
-					<div class="tsd-signature tsd-kind-icon">temp<wbr>File<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">SourceFile</span></div>
+					<a name="relativefromtargettoroot" class="tsd-anchor"></a>
+					<h3>relative<wbr>From<wbr>Target<wbr>ToRoot</h3>
+					<div class="tsd-signature tsd-kind-icon">relative<wbr>From<wbr>Target<wbr>ToRoot<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/NodePrinter.ts#L7">generators/NodePrinter.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/DirectoryInfo.ts#L16">DirectoryInfo.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="initializeprinter" class="tsd-anchor"></a>
-					<h3>initialize<wbr>Printer</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">initialize<wbr>Printer<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/NodePrinter.ts#L48">generators/NodePrinter.ts:48</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="rootpath" class="tsd-anchor"></a>
+					<h3>root<wbr>Path</h3>
+					<div class="tsd-signature tsd-kind-icon">root<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/DirectoryInfo.ts#L12">DirectoryInfo.ts:12</a></li>
+						</ul>
+					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="printnode" class="tsd-anchor"></a>
-					<h3>print<wbr>Node</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">print<wbr>Node<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/NodePrinter.ts#L22">generators/NodePrinter.ts:22</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>node: <span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-						</li>
-					</ul>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="sourcedirectoryname" class="tsd-anchor"></a>
+					<h3>source<wbr>Directory<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">source<wbr>Directory<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/DirectoryInfo.ts#L4">DirectoryInfo.ts:4</a></li>
+						</ul>
+					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="printnode-1" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> print<wbr>Node</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">print<wbr>Node<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="nodebuilder.html" class="tsd-signature-type">NodeBuilder</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/generators/NodePrinter.ts#L9">generators/NodePrinter.ts:9</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>node: <span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="nodebuilder.html" class="tsd-signature-type">NodeBuilder</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-						</li>
-					</ul>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="sourcefilepath" class="tsd-anchor"></a>
+					<h3>source<wbr>File<wbr>Path</h3>
+					<div class="tsd-signature tsd-kind-icon">source<wbr>File<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/DirectoryInfo.ts#L6">DirectoryInfo.ts:6</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="sourcepath" class="tsd-anchor"></a>
+					<h3>source<wbr>Path</h3>
+					<div class="tsd-signature tsd-kind-icon">source<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/DirectoryInfo.ts#L5">DirectoryInfo.ts:5</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="targetdirectoryname" class="tsd-anchor"></a>
+					<h3>target<wbr>Directory<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">target<wbr>Directory<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/DirectoryInfo.ts#L8">DirectoryInfo.ts:8</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="targetfilepath" class="tsd-anchor"></a>
+					<h3>target<wbr>File<wbr>Path</h3>
+					<div class="tsd-signature tsd-kind-icon">target<wbr>File<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/DirectoryInfo.ts#L10">DirectoryInfo.ts:10</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="targetpath" class="tsd-anchor"></a>
+					<h3>target<wbr>Path</h3>
+					<div class="tsd-signature tsd-kind-icon">target<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-vscode-api-extensions/blob/7dd7989/src/DirectoryInfo.ts#L9">DirectoryInfo.ts:9</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -199,22 +202,34 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="nodeprinter.html" class="tsd-kind-icon">Node<wbr>Printer</a>
+						<a href="directoryinfo.html" class="tsd-kind-icon">Directory<wbr>Info</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="nodeprinter.html#printer" class="tsd-kind-icon">printer</a>
+								<a href="directoryinfo.html#relativefromsourcetoroot" class="tsd-kind-icon">relative<wbr>From<wbr>Source<wbr>ToRoot</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="nodeprinter.html#tempfile" class="tsd-kind-icon">temp<wbr>File</a>
+								<a href="directoryinfo.html#relativefromtargettoroot" class="tsd-kind-icon">relative<wbr>From<wbr>Target<wbr>ToRoot</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="nodeprinter.html#initializeprinter" class="tsd-kind-icon">initialize<wbr>Printer</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="directoryinfo.html#rootpath" class="tsd-kind-icon">root<wbr>Path</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="nodeprinter.html#printnode" class="tsd-kind-icon">print<wbr>Node</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="directoryinfo.html#sourcedirectoryname" class="tsd-kind-icon">source<wbr>Directory<wbr>Name</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="nodeprinter.html#printnode-1" class="tsd-kind-icon">print<wbr>Node</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="directoryinfo.html#sourcefilepath" class="tsd-kind-icon">source<wbr>File<wbr>Path</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="directoryinfo.html#sourcepath" class="tsd-kind-icon">source<wbr>Path</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="directoryinfo.html#targetdirectoryname" class="tsd-kind-icon">target<wbr>Directory<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="directoryinfo.html#targetfilepath" class="tsd-kind-icon">target<wbr>File<wbr>Path</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="directoryinfo.html#targetpath" class="tsd-kind-icon">target<wbr>Path</a>
 							</li>
 						</ul>
 					</li>
